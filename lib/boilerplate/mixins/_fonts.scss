@@ -1,0 +1,22 @@
+@mixin serif-font {
+  // font: 16px/20px
+  font-family: ff-tisa-web-pro-1, ff-tisa-web-pro-2, Georgia, "Times New Roman", serif;
+  line-height: 1.4em;
+}
+@mixin sans-serif-font-stack {
+  font-family: myriad-pro-condensed-1, myriad-pro-condensed-2, 'helvetica neue', arial, 'lucida grande', sans-serif;
+}
+@mixin monospaced-font {
+  font-family: inconsolata-1,inconsolata-2, Monaco, Courier, sans-serif;
+}
+@mixin branded-font-stack {
+  font-family: chunk, "chunk-1","chunk-2", impact, serif;
+}
+@mixin header-font-stack {
+  @include sans-serif-font-stack;
+  font-weight: bold;
+}
+@mixin small-font-stack {
+  font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+}
+

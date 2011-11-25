@@ -1,0 +1,112 @@
+@import "compass/css3/gradient";
+@mixin iphone-fonts {
+  font-family: Helvetica, Verdana, Arial;
+  color: #303e46;
+}
+@mixin iphone-list {
+  li {
+    @include iphone-fonts;
+    @include background-image(image-url("noise.png"), linear-gradient(top, #eeeeee, #cccccc));
+    display: block;
+    padding: 0;
+    height: 42px;
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    a, span {
+      @include iphone-fonts;
+      height: 42px;
+      line-height: 42px;
+      margin: 0 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin iphone-grouped-heading {
+  @include iphone-fonts;
+  @include background-image(image-url("noise.png"), linear-gradient(top, #777777, #555555));
+  line-height: 42px;
+  font-size: 23px;
+  margin: 0;
+  padding: 0 10px;
+  color: #ddd;
+  font-weight: normal;
+}
+
+@mixin iphone-top-toolbar($color) {
+  $gradient-start: lighten($color, 10%);
+  $gradient-end: darken($color, 10%);
+  @include background-image(image-url("noise.png"), linear-gradient(top, $gradient-start, $gradient-end));
+  border-bottom: 1px solid darken($gradient-end, 15%);
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  height: 44px;
+  //position: absolute;
+  //top: 0;
+  //left: 0;
+  overflow: hidden;
+
+  h1 {
+    @include iphone-fonts;
+    @include single-text-shadow(#000, 0px, -1px, 1px);
+    font-size: 28px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+@mixin iphone-top-toolbar-back($color) {
+  $gradient-start: $color;
+  $gradient-end: darken($color, 20%);
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 7px;
+  width: auto;
+  left: 7px;
+  z-index: 20;
+
+  ul {
+    li {
+      display: none;
+      margin: 0;
+      padding: 0;
+
+      &:first-child {
+        @include background-image(image-url("noise.png"), linear-gradient(top, $gradient-start, $gradient-end));
+        border-top: 1px solid $gradient-end;
+        border-left: 1px solid $gradient-end;
+        border-right: 1px solid $gradient-start;
+        border-bottom: 1px solid $gradient-start;
+        width: 46px;
+
+        a {
+          @include single-text-shadow(#000, 0px, -1px, 1px);
+          color: #fff;
+          display: block;
+          padding: 4px;
+          text-align: center;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@mixin heading-hierarchy($h1_size) {
+  $ratio: $h1_size/48px;
+  h1 {
+    $size: 48px*$ratio;
+    @include adjust-font-size-to($size);
+  }
+  h2, section h1 {
+    $size: 32px*$ratio;
+    @include adjust-font-size-to($size);
+  }
+  h3, section article h1 {
+    $size: 28px*$ratio;
+    @include adjust-font-size-to($size);
+  }
+  fieldset.inputs ol {
+    li {
+      @include rhythm(0.5);
+      label {
+        $size: 28px*$ratio;
+        @include adjust-font-size-to($size);
+      }
+      input, textarea {
+        $size: 28px*$ratio;
+        @include adjust-font-size-to($size);
+      }
+      select {
+        $size: 28px*$ratio;
+        @include adjust-font-size-to($size);
+        padding: 0.25em;
+      }
+    }
+  }
+  fieldset.buttons {
+    li {
+
+      input {
+        $size: 32px*$ratio;
+        @include adjust-font-size-to($size);
+      }
+    }
+  }
+}

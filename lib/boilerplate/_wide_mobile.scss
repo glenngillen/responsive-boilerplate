@@ -1,0 +1,129 @@
+@import "base";
+
+@media screen and (min-width: 30em) and (max-width: 37.5em) {
+  @include content-size(6);
+  @include heading-hierarchy(32px);
+
+  header[role=logo] {
+    margin: 0;
+
+    h1 {
+      text-align: center;
+      font-size: 27px;
+    }
+    h2 {
+      display: none;
+    }
+  }
+
+  nav.breadcrumb {
+    display: none;
+  }
+
+  article[role=summary] {
+    h1 {
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+    p {
+      display: none;
+    }
+  }
+  article[role=main] {
+    width: 100%;
+    position: absolute;
+    left: 0;
+
+    h1 {
+      @include background-image(image-url('noise.png'), linear-gradient(top, #777777, #555555));
+      line-height: 42px;
+      font-size: 23px;
+      margin: 0;
+      padding: 0 10px;
+      color: #ddd;
+      font-weight: normal;
+    }
+
+    h2 {
+      @include background-image(image-url('noise.png'), linear-gradient(top, #777777, #555555));
+      line-height: 42px;
+      font-size: 23px;
+      margin: 23px 0 0;
+      padding: 0 10px;
+      color: #ddd;
+      font-weight: normal;
+    }
+  }
+  section.articles {
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    header h1 {
+      display: none;
+    }
+
+    article {
+      header h1 {
+        display: block;
+      }
+    }
+
+    ol {
+      li {
+        @include background-image(image-url('noise.png'), linear-gradient(top, #eeeeee, #cccccc));
+        height: 42px;
+        padding: 0;
+        display: block;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        border-bottom: 1px solid #bbb;
+
+        h1 {
+          background: none;
+          padding: 0 10px;
+          margin: 0;
+          font-size: 23px;
+          line-height: 42px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+
+          a {
+            text-decoration: none;
+          }
+        }
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+
+  div#content {
+    p {
+      @include adjust-leading-to(1);
+      width: $cols6;
+      margin-left: auto;
+      margin-right: auto;
+
+      code {
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  pre {
+    width: $cols6;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  footer {
+    display: none;
+  }
+}

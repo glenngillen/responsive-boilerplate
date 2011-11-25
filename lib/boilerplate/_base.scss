@@ -1,0 +1,32 @@
+$base-font-size: 17px;
+$base-line-height: 24px;
+$relative-font-sizing: true;
+$font-unit: 1em;
+
+$base-color: rgb(188, 0, 2);
+$base-gradient-start: lighten($base-color, 10%);
+$base-gradient-end: darken($base-color, 10%);
+$light-link-color: darken(lighten($base-color, 100%), 15%);
+$shadow-color: #282828;
+$inline-highlight-color: #cde0e9;
+$heading-color: #333333;
+$breadcrumb-background: #222;
+
+@import "compass/css3/gradient";
+@import "compass/css3/text-shadow";
+@import "compass/utilities/general/clearfix";
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/background-size";
+@import "compass/css3/images";
+@import "compass/css3/gradient";
+@import "mixins/content-sizer";
+@import 'mixins/framework';
+@import 'mixins/fonts';
+@import 'mixins/icons';
+@import 'mixins/headings';
+@import 'mixins/mobile_toolbar';
+@import 'mixins/notices';
+@import 'mixins/iphone_styling';

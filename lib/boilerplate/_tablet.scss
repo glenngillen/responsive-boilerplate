@@ -1,0 +1,13 @@
+@import "base";
+
+@media screen and (min-width: 37.5em) {
+  @include content-size(7);
+
+  div#content {
+    p {
+      @include adjust-leading-to(1.2);
+    }
+  }
+
+}
+

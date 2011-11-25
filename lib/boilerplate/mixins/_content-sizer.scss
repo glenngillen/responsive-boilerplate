@@ -1,0 +1,16 @@
+@mixin content-size($width) {
+  body {
+    header hgroup {
+      @include width($width);
+    }
+    nav ul {
+      @include width($width);
+    }
+    #content {
+      @include width($width);
+    }
+    footer p {
+      @include width($width);
+    }
+  }
+}

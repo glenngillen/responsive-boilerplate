@@ -1,0 +1,71 @@
+form {
+  fieldset.inputs ol {
+
+    abbr[title] { border-bottom: none }
+    li.string, li.text, li.select {
+      display: block;
+      clear: both;
+      border-bottom: 1px solid #aaa;
+
+      label {
+        display: block;
+      }
+
+      input, textarea {
+        background: #f9f9f9;
+        color: #aaa;
+
+        &:focus {
+          background: #fff;
+          color: #000;
+        }
+      }
+
+      input, textarea, select {
+        margin: 0.5em 0;
+        padding: 0.25em;
+      }
+
+      input, textarea, select option {
+        border: 1px solid #aaa;
+        width: 15em;
+      }
+
+      select {
+      }
+
+      textarea {
+        height: 4em;
+      }
+    }
+
+    li.required {
+      label {
+        color: #8e1000;
+        font-weight: bold;
+      }
+    }
+  }
+
+  fieldset.buttons {
+    li {
+      @include rhythm(0.5);
+      display: block;
+      clear: both;
+
+      input {
+        margin: 0.25em 0;
+        padding: 0.25em;
+      }
+
+      &.commit {
+        input {
+
+          &:active {
+          }
+        }
+      }
+    }
+  }
+}
+

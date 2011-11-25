@@ -1,0 +1,17 @@
+@mixin active_navigation($name) {
+  body.#{$name} {
+    ul.navigation {
+      li.#{$name} {
+        background: rgba(255, 255, 255, 0.15);
+        a.icon {
+          span.icon {
+            color: #41c4ff;
+          }
+          span {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
