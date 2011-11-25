@@ -1,517 +1,519 @@
 @import "base";
 
-@media screen and (min-width: 15em) and (max-width: 30em) {
-  @include content-size(4);
-  @include heading-hierarchy(32px);
-  @include active_navigation("dashboard");
-  @include active_navigation("challenges");
-  @include active_navigation("awards");
-  @include active_navigation("account");
-  @include active_navigation("logout");
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
+@mixin boilerplate-mobile {
+  @media screen and (min-width: 15em) and (max-width: 30em) {
+    @include content-size(4);
+    @include heading-hierarchy(32px);
+    @include active_navigation("dashboard");
+    @include active_navigation("challenges");
+    @include active_navigation("awards");
+    @include active_navigation("account");
+    @include active_navigation("logout");
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-  body {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  .wrap {
-    clear: both;
-    position: absolute;
-    width: 100%;
-    top: 44px;
-    bottom: 0;
-    overflow: hidden;
-    padding-top: 44px;
-  }
-
-  .wrapper {
-    clear: both;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    bottom: 49px;
-    overflow: auto;
-  }
-
-  body.app {
-    #content {
+    body {
+      position: absolute;
       width: 100%;
+      height: 100%;
     }
-    h2 {
-      @include iphone-grouped-heading;
+
+    .wrap {
+      clear: both;
+      position: absolute;
+      width: 100%;
+      top: 44px;
+      bottom: 0;
+      overflow: hidden;
+      padding-top: 44px;
     }
-    ol {
-      @include iphone-list;
-      li {
-        span {
-          display: none;
-        }
+
+    .wrapper {
+      clear: both;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      bottom: 49px;
+      overflow: auto;
+    }
+
+    body.app {
+      #content {
+        width: 100%;
       }
-
-      &.participants {
-        @include legacy-pie-clearfix;
-        background: #eee;
-
+      h2 {
+        @include iphone-grouped-heading;
+      }
+      ol {
+        @include iphone-list;
         li {
-          background: transparent;
-          width: 50px;
-          height: 50px;
-          float: left;
+          span {
+            display: none;
+          }
+        }
+
+        &.participants {
+          @include legacy-pie-clearfix;
+          background: #eee;
+
+          li {
+            background: transparent;
+            width: 50px;
+            height: 50px;
+            float: left;
+          }
         }
       }
     }
-  }
 
-  header[role=action] {
-    @include iphone-top-toolbar($base-color);
-  }
+    header[role=action] {
+      @include iphone-top-toolbar($base-color);
+    }
 
-  header[role=logo] {
-    display: none;
-  }
+    header[role=logo] {
+      display: none;
+    }
 
-  nav.breadcrumb {
-    @include iphone-top-toolbar-back($base-color);
-  }
+    nav.breadcrumb {
+      @include iphone-top-toolbar-back($base-color);
+    }
 
-  article[role=summary] {
-    h1 {
-      margin: 0;
+    article[role=summary] {
+      h1 {
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        left: 0;
+      }
+      p {
+        display: none;
+      }
+    }
+    article[role=main] {
       width: 100%;
       position: absolute;
       left: 0;
-    }
-    p {
-      display: none;
-    }
-  }
-  article[role=main] {
-    width: 100%;
-    position: absolute;
-    left: 0;
 
-    h2 {
-      @include background-image(image-url("noise.png"), linear-gradient(top, #777777, #555555));
-      line-height: 42px;
-      font-size: 23px;
-      margin: 23px 0 0;
-      padding: 0 10px;
-      color: #ddd;
-      font-weight: normal;
-    }
-  }
-
-  .description {
-    @include width(3);
-    @include adjust-font-size-to(19px);
-    @include leader(1);
-    @include trailer(1);
-    margin: 1em auto;
-  }
-
-  #content {
-    a.icon {
-      @include border-radius(10px);
-      background: transparent;
-      color: #000;
-      color: rgba(0, 0, 0, 0.7);
-      float: none;
-      display: block;
-      height: 42px;
-      width: 42px;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-
-      span.icon-title {
-        display: none;
+      h2 {
+        @include background-image(image-url("noise.png"), linear-gradient(top, #777777, #555555));
+        line-height: 42px;
+        font-size: 23px;
+        margin: 23px 0 0;
+        padding: 0 10px;
+        color: #ddd;
+        font-weight: normal;
       }
-      span.icon {
+    }
+
+    .description {
+      @include width(3);
+      @include adjust-font-size-to(19px);
+      @include leader(1);
+      @include trailer(1);
+      margin: 1em auto;
+    }
+
+    #content {
+      a.icon {
+        @include border-radius(10px);
+        background: transparent;
+        color: #000;
+        color: rgba(0, 0, 0, 0.7);
+        float: none;
         display: block;
         height: 42px;
         width: 42px;
-        font-size: 30px;
-        line-height: 23px;
-      }
-    }
-  }
-
-  section.articles {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    margin: 0;
-
-    header h1 {
-      display: none;
-    }
-
-    article {
-      header h1 {
-        display: block;
-      }
-    }
-
-    ol {
-      li {
-        @include background-image(image-url("noise.png"), linear-gradient(top, #eeeeee, #cccccc));
-        height: 42px;
+        text-align: center;
+        margin: 0;
         padding: 0;
-        display: block;
-        width: 100%;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        border-bottom: 1px solid #bbb;
 
-        h1 {
-          background: none;
-          padding: 0 10px;
-          margin: 0;
-          font-size: 23px;
-          line-height: 42px;
+        span.icon-title {
+          display: none;
+        }
+        span.icon {
+          display: block;
+          height: 42px;
+          width: 42px;
+          font-size: 30px;
+          line-height: 23px;
+        }
+      }
+    }
+
+    section.articles {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      margin: 0;
+
+      header h1 {
+        display: none;
+      }
+
+      article {
+        header h1 {
+          display: block;
+        }
+      }
+
+      ol {
+        li {
+          @include background-image(image-url("noise.png"), linear-gradient(top, #eeeeee, #cccccc));
+          height: 42px;
+          padding: 0;
+          display: block;
+          width: 100%;
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
+          border-bottom: 1px solid #bbb;
 
-          a {
-            text-decoration: none;
+          h1 {
+            background: none;
+            padding: 0 10px;
+            margin: 0;
+            font-size: 23px;
+            line-height: 42px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            a {
+              text-decoration: none;
+            }
+          }
+          p {
+            display: none;
           }
         }
-        p {
-          display: none;
+      }
+    }
+
+    div#content {
+      p {
+        @include adjust-leading-to(1);
+        width: $cols4;
+        margin-left: auto;
+        margin-right: auto;
+
+        code {
+          word-wrap: break-word;
         }
       }
     }
-  }
 
-  div#content {
-    p {
-      @include adjust-leading-to(1);
-      width: $cols4;
-      margin-left: auto;
-      margin-right: auto;
-
-      code {
-        word-wrap: break-word;
-      }
-    }
-  }
-
-  #content {
-    ul.habits {
-      a.icon {
-        float: right;
-        margin-right: 5px;
-      }
-    }
-  }
-
-  section.habits {
-    width: 100%;
-
-    h3 {
-      @include iphone-grouped-heading;
-    }
-
-    ul.habits {
-      @include iphone-list;
-      li {
+    #content {
+      ul.habits {
         a.icon {
-          span.icon {
-            font-family: "Pictos";
-          }
-        }
-      }
-    }
-  }
-
-  pre {
-    width: $cols4;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  footer {
-    display: none;
-  }
-
-  form {
-    fieldset.inputs ol {
-
-      abbr[title] { border-bottom: none }
-      li.string, li.text, li.select {
-        display: block;
-        clear: both;
-        padding: 3px 10px 10px;
-        margin: 5px 0 10px;
-        border-bottom: 1px solid #aaa;
-
-        label {
-          @include adjust-font-size-to(19px);
-          display: block;
-          margin: 0 0 5px;
-        }
-
-        input, textarea, select {
-          @include adjust-font-size-to(19px);
-        }
-
-        input, textarea {
-          @include width(3);
-          @include border-radius;
-          border: 1px solid #aaa;
-        }
-
-        select {
-          @include width(3);
-          @include border-radius;
-        }
-
-        textarea {
-          height: 4em;
-        }
-      }
-
-      li.required {
-        label {
-          color: #8e1000;
-          font-weight: bold;
+          float: right;
+          margin-right: 5px;
         }
       }
     }
 
-    fieldset.buttons {
-      li {
-        display: block;
-        clear: both;
-        padding: 3px 10px 20px;
-        margin: 5px 0 20px;
+    section.habits {
+      width: 100%;
 
-        &.commit {
-          input {
-            @include adjust-font-size-to(19px);
-            @include background-image(linear-gradient(#619bc6, #3b6ca1));
-            @include border-radius(15px);
-            @include single-text-shadow(#185074, 0px, -1px, 1px);
-            color: #fff;
-            border-top: 1px solid #90b9d8;
-            border-left: 1px solid #90b9d8;
-            border-bottom: 1px solid #185074;
-            border-right: 1px solid #185074;
-            padding: 5px 15px;
+      h3 {
+        @include iphone-grouped-heading;
+      }
 
-            &:active {
-              @include background-image(linear-gradient(#3b6ca1, #619bc6));
-              @include single-text-shadow(#185074, 0px, 1px, 1px);
-              border-bottom: 1px solid #90b9d8;
-              border-right: 1px solid #90b9d8;
-              border-top: 1px solid #185074;
-              border-left: 1px solid #185074;
+      ul.habits {
+        @include iphone-list;
+        li {
+          a.icon {
+            span.icon {
+              font-family: "Pictos";
             }
           }
         }
       }
     }
-  }
 
-  nav.sections {
-    @include border-radius(0);
-    width: 100%;
-    overflow: hidden;
-    position: absolute;
-    z-index: 10;
-    top: auto;
-    bottom: 0;
-    margin: 0;
-    padding: 3px 0 0;
-    list-style: none;
-    display: block;
-    height: 46px;
-    background-color: #000;
-    //background: #000 url(/images/iphone-toolbar-bg.png) repeat-x center bottom;
-
-    ul {
-      width: 100%
+    pre {
+      width: $cols4;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    &.logged-in {
-      li {
-        width: 20%;
-      }
+    footer {
+      display: none;
     }
 
-    li {
-      height: 42px;
-      margin: 0;
-      padding: 0;
-      display: block;
-      float: left;
-      overflow: hidden;
-      -webkit-tap-highlight-color: rgba(255, 255, 255, 0.15);
+    form {
+      fieldset.inputs ol {
 
-      a.icon {
-        -webkit-tap-highlight-color: transparent;
-        display: block;
-        width: 100%;
-        overflow: hidden;
-        margin: 0 auto;
-        padding: 2px 5px;
-        color: #bbb;
-        font-size: 10px;
-        font-weight: bold;
-        text-decoration: none;
-        font-family: Helvetica, Verdana, sans-serif;
-        text-align: center;
-
-        span.icon {
+        abbr[title] { border-bottom: none }
+        li.string, li.text, li.select {
           display: block;
-          margin: 5px 0;
+          clear: both;
+          padding: 3px 10px 10px;
+          margin: 5px 0 10px;
+          border-bottom: 1px solid #aaa;
+
+          label {
+            @include adjust-font-size-to(19px);
+            display: block;
+            margin: 0 0 5px;
+          }
+
+          input, textarea, select {
+            @include adjust-font-size-to(19px);
+          }
+
+          input, textarea {
+            @include width(3);
+            @include border-radius;
+            border: 1px solid #aaa;
+          }
+
+          select {
+            @include width(3);
+            @include border-radius;
+          }
+
+          textarea {
+            height: 4em;
+          }
+        }
+
+        li.required {
+          label {
+            color: #8e1000;
+            font-weight: bold;
+          }
+        }
+      }
+
+      fieldset.buttons {
+        li {
+          display: block;
+          clear: both;
+          padding: 3px 10px 20px;
+          margin: 5px 0 20px;
+
+          &.commit {
+            input {
+              @include adjust-font-size-to(19px);
+              @include background-image(linear-gradient(#619bc6, #3b6ca1));
+              @include border-radius(15px);
+              @include single-text-shadow(#185074, 0px, -1px, 1px);
+              color: #fff;
+              border-top: 1px solid #90b9d8;
+              border-left: 1px solid #90b9d8;
+              border-bottom: 1px solid #185074;
+              border-right: 1px solid #185074;
+              padding: 5px 15px;
+
+              &:active {
+                @include background-image(linear-gradient(#3b6ca1, #619bc6));
+                @include single-text-shadow(#185074, 0px, 1px, 1px);
+                border-bottom: 1px solid #90b9d8;
+                border-right: 1px solid #90b9d8;
+                border-top: 1px solid #185074;
+                border-left: 1px solid #185074;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    nav.sections {
+      @include border-radius(0);
+      width: 100%;
+      overflow: hidden;
+      position: absolute;
+      z-index: 10;
+      top: auto;
+      bottom: 0;
+      margin: 0;
+      padding: 3px 0 0;
+      list-style: none;
+      display: block;
+      height: 46px;
+      background-color: #000;
+      //background: #000 url(/images/iphone-toolbar-bg.png) repeat-x center bottom;
+
+      ul {
+        width: 100%
+      }
+
+      &.logged-in {
+        li {
+          width: 20%;
+        }
+      }
+
+      li {
+        height: 42px;
+        margin: 0;
+        padding: 0;
+        display: block;
+        float: left;
+        overflow: hidden;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0.15);
+
+        a.icon {
+          -webkit-tap-highlight-color: transparent;
+          display: block;
           width: 100%;
-          height: 12px;
+          overflow: hidden;
+          margin: 0 auto;
+          padding: 2px 5px;
+          color: #bbb;
+          font-size: 10px;
+          font-weight: bold;
+          text-decoration: none;
+          font-family: Helvetica, Verdana, sans-serif;
+          text-align: center;
+
+          span.icon {
+            display: block;
+            margin: 5px 0;
+            width: 100%;
+            height: 12px;
+          }
+        }
+
+        span.overdue {
+          z-index: 20;
+          top: 0px;
+          right: 0px;
+          bottom: auto;
+          left: auto;
+        }
+
+        &:hover, &:active {
+          background: rgba(255, 255, 255, 0.15);
+
+          a.icon:hover, a.icon:active {
+            background: transparent;
+          }
         }
       }
+    }
 
-      span.overdue {
-        z-index: 20;
-        top: 0px;
-        right: 0px;
-        bottom: auto;
-        left: auto;
-      }
+    div.warning, div.info, div.error, div.notice {
+      @extend .fadeInUpBig;
+      @extend .animated;
+      position: absolute;
+      bottom: 0;
+      padding: 0;
 
-      &:hover, &:active {
-        background: rgba(255, 255, 255, 0.15);
-
-        a.icon:hover, a.icon:active {
-          background: transparent;
-        }
+      p {
+        padding: 10px 0;
       }
     }
   }
 
-  div.warning, div.info, div.error, div.notice {
-    @extend .fadeInUpBig;
-    @extend .animated;
-    position: absolute;
-    bottom: 0;
-    padding: 0;
+  //  h1.logo {
+  //    display: none;
+  //  }
+  //
+  //  .footer {
+  //    display: none;
+  //  }
+  //
+  //  h1, h2, h3, h4 {
+  //    font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
+  //    font-weight: bold;
+  //  }
+  //
+  //
+  //    h1 {
+  //      position: absolute;
+  //      top: 0;
+  //      left: 0;
+  //      border-bottom: 1px solid #570a03;
+  //      background: #8e1000 url(/images/iphone-toolbar-bg.png) repeat-x center top;
+  //      height: 37px;
+  //      width: 100%;
+  //      text-align: center;
+  //      font-size: 30px;
+  //      line-height: 42px;
+  //      color: #fff;
+  //      padding: 3px 0;
+  //      @include single-text-shadow(#8e1000, 0px, -1px, 1px);
+  //      letter-spacing: -1px;
+  //    }
+  //  }
+  //
+  //
+  //  .content {
+  //    h1 {
+  //      font-size: 20pt;
+  //      margin: 10px 0 5px;
+  //    }
+  //    p {
+  //      margin: 5px 0;
+  //    }
+  //    p.logins {
+  //      text-align: center;
+  //
+  //      a.facebook-login, a.twitter-login {
+  //        float: none;
+  //        margin: 10px auto;
+  //      }
+  //    }
+  //  }
+  //}
 
-    p {
-      padding: 10px 0;
-    }
-  }
+  // ol.challenges {
+  //   li {
+  //     @include background-image(linear-gradient(#fdfdfd, #eeeeee));
+  //     border-bottom: 1px solid #bbbbbb;
+  //     height: 18px;
+  //     padding: 12px 16px;
+  //     font-size: 18px;
+  //     font-weight: bold;
+  //     overflow: hidden;
+  //     white-space: nowrap;
+  //
+  //     &:active {
+  //       @include background-image(linear-gradient(#ececec, #dadada));
+  //       @include single-text-shadow(#fff, 0px, 1px, 1px);
+  //     }
+  //
+  //     a {
+  //       text-decoration: none;
+  //       color: #303e46;
+  //       width: 100%;
+  //       overflow: hidden;
+  //       text-overflow: ellipsis;
+  //       display: block;
+  //     }
+  //
+  //     span.overdue {
+  //       display: none;
+  //     }
+  //   }
+  // }
+  //
+  //
+  // body.splash {
+  //   @include radial-gradient(color_stops(#ff0003,#6b0000), top, image-url('/images/noise.png'));
+  //
+  //   h1.logo {
+  //     @include single-text-shadow(#282828, 2px, 2px, 2px);
+  //     display: block;
+  //     background: none;
+  //     border: none;
+  //
+  //     a {
+  //       color: #fff;
+  //       text-decoration: none;
+  //     }
+  //   }
+  //
+  //   div.content {
+  //     @include width(4);
+  //   }
+  //
+  //   ul.navigation {
+  //     display: none;
+  //   }
+  // }
+  //
 }
-
-//  h1.logo {
-//    display: none;
-//  }
-//
-//  .footer {
-//    display: none;
-//  }
-//
-//  h1, h2, h3, h4 {
-//    font-family: "Trebuchet MS", Arial, Verdana, sans-serif;
-//    font-weight: bold;
-//  }
-//
-//
-//    h1 {
-//      position: absolute;
-//      top: 0;
-//      left: 0;
-//      border-bottom: 1px solid #570a03;
-//      background: #8e1000 url(/images/iphone-toolbar-bg.png) repeat-x center top;
-//      height: 37px;
-//      width: 100%;
-//      text-align: center;
-//      font-size: 30px;
-//      line-height: 42px;
-//      color: #fff;
-//      padding: 3px 0;
-//      @include single-text-shadow(#8e1000, 0px, -1px, 1px);
-//      letter-spacing: -1px;
-//    }
-//  }
-//
-//
-//  .content {
-//    h1 {
-//      font-size: 20pt;
-//      margin: 10px 0 5px;
-//    }
-//    p {
-//      margin: 5px 0;
-//    }
-//    p.logins {
-//      text-align: center;
-//
-//      a.facebook-login, a.twitter-login {
-//        float: none;
-//        margin: 10px auto;
-//      }
-//    }
-//  }
-//}
-
-// ol.challenges {
-//   li {
-//     @include background-image(linear-gradient(#fdfdfd, #eeeeee));
-//     border-bottom: 1px solid #bbbbbb;
-//     height: 18px;
-//     padding: 12px 16px;
-//     font-size: 18px;
-//     font-weight: bold;
-//     overflow: hidden;
-//     white-space: nowrap;
-//
-//     &:active {
-//       @include background-image(linear-gradient(#ececec, #dadada));
-//       @include single-text-shadow(#fff, 0px, 1px, 1px);
-//     }
-//
-//     a {
-//       text-decoration: none;
-//       color: #303e46;
-//       width: 100%;
-//       overflow: hidden;
-//       text-overflow: ellipsis;
-//       display: block;
-//     }
-//
-//     span.overdue {
-//       display: none;
-//     }
-//   }
-// }
-//
-//
-// body.splash {
-//   @include radial-gradient(color_stops(#ff0003,#6b0000), top, image-url('/images/noise.png'));
-//
-//   h1.logo {
-//     @include single-text-shadow(#282828, 2px, 2px, 2px);
-//     display: block;
-//     background: none;
-//     border: none;
-//
-//     a {
-//       color: #fff;
-//       text-decoration: none;
-//     }
-//   }
-//
-//   div.content {
-//     @include width(4);
-//   }
-//
-//   ul.navigation {
-//     display: none;
-//   }
-// }
-//

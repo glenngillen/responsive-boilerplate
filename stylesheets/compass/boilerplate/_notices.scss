@@ -1,16 +1,18 @@
 @import "base";
 
-div.error, div.notice, div.warning, div.information {
-  margin: 0 auto 2em;
-  padding: 0;
-  text-align: center;
+@mixin boilerplate-notices {
+  div.error, div.notice, div.warning, div.information {
+    margin: 0 auto 2em;
+    padding: 0;
+    text-align: center;
 
-  p {
-    width: auto;
+    p {
+      width: auto;
+    }
   }
-}
 
-@include flash_notice('info', 'cancel.png', '#53a5cf');
-@include flash_notice('error', 'cancel.png', '#da4442');
-@include flash_notice('notice', 'ok.png', '#68b706');
-@include flash_notice('warning', 'alert.png', '#e8af44');
+  @include flash_notice('info', 'cancel.png', '#53a5cf');
+  @include flash_notice('error', 'cancel.png', '#da4442');
+  @include flash_notice('notice', 'ok.png', '#68b706');
+  @include flash_notice('warning', 'alert.png', '#e8af44');
+}
