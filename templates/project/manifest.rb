@@ -1,1 +1,2 @@
-stylesheet 'screen.scss', :media => 'screen, projection'
+#stylesheet 'screen.scss', :media => 'screen, projection'
+discover :all
