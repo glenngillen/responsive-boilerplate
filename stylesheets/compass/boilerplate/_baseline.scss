@@ -68,6 +68,8 @@
   }
 
   body.splash {
+    $base-gradient-start: lighten($base-color, 10%) !default;
+    $base-gradient-end: darken($base-color, 10%) !default;
     @include background-image(image-url("noise.png"), radial-gradient(top, $base-gradient-start, $base-gradient-end));
     height: 100%;
     background-repeat: no-repeat;
@@ -111,6 +113,8 @@
   }
 
   header[role=logo] {
+    $base-gradient-start: lighten($base-color, 10%) !default;
+    $base-gradient-end: darken($base-color, 10%) !default;
     @include background-image(image-url("noise.png"), linear-gradient(top, $base-gradient-start, $base-gradient-end));
     margin: 0;
     padding: 0;

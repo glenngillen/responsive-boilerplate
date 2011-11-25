@@ -4,8 +4,6 @@ $relative-font-sizing: true;
 $font-unit: 1em;
 
 $base-color: rgb(188, 0, 2);
-$base-gradient-start: lighten($base-color, 10%);
-$base-gradient-end: darken($base-color, 10%);
 $light-link-color: darken(lighten($base-color, 100%), 15%);
 $shadow-color: #282828;
 $inline-highlight-color: #cde0e9;
