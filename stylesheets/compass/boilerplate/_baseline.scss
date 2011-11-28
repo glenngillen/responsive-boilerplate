@@ -72,8 +72,8 @@
     $base-gradient-end: darken($base-color, 10%) !default;
     @include background-image(image-url("noise.png"), radial-gradient(top, $base-gradient-start, $base-gradient-end));
     height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed, fixed;
     margin: 0;
 
     header[role=logo] {
