@@ -1,1 +1,1 @@
-discover :images
+discover :all
